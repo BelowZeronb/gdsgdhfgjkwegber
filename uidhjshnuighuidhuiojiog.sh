@@ -27,6 +27,9 @@ echo 王者荣耀=$uid
 sleep 0.5
 echo 加载对抗卡框数据…
 sleep 0.5
+iptables -I OUTPUT -m owner --uid-owner=$uid -d priv.igame.qq.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid -d lbs.map.qq.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid -d apis.map.qq.com -j ACCEPT
 #修复第三方环境异常
 echo 16384 > /proc/sys/fs/inotify/max_queued_events
 echo 128 > /proc/sys/fs/inotify/max_user_instances
