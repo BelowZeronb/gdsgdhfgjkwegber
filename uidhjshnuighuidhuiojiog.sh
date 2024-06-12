@@ -1,5 +1,5 @@
 echo -e "\033[45;37m 欢迎使用极地ICE防卡框 \033[0m"
-echo 云更日期:2024年6月12日晚11：11
+echo 云更日期:2024年6月12日晚11：14
 echo 清理iptables规则
 iptables -F
 iptables -t nat -F 
@@ -35,6 +35,7 @@ echo 16384 > /proc/sys/fs/inotify/max_queued_events
 echo 128 > /proc/sys/fs/inotify/max_user_instances
 echo 8192 > /proc/sys/fs/inotify/max_user_watches
 #
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 10012 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
