@@ -1,5 +1,5 @@
 echo -e "\033[45;37m 欢迎使用极地ICE防卡框 \033[0m"
-echo 云更日期:2024年6月13日0：07
+echo 云更日期:2024年6月13日0：44
 echo 清理iptables规则
 iptables -F
 iptables -t nat -F 
@@ -11,15 +11,6 @@ ip6tables -Z
 ip6tables=/system/bin/ip6tables
 iptables=/system/bin/iptables
 sleep 0.5
-echo 清除残余925卡框文件
-rm -rf filedir /data/user/0/com.tencent.tmgp.sgame/files/tdm_tmp
-rm -rf filedir /data/user/0/com.tencent.tmgp.sgame/files/ano_tmp
-rm -rf filedir /data/user/0/com.tencent.tmgp.sgame/shared_prefs
-rm -f /data/data/com.tencent.tmgp.sgame/files/ano_tmp/*
-rm -rf /data/data/com.tencent.tmgp.sgame/files/ano_tmp/ac_tmp
-rm -rf /data/data/com.tencent.tmgp.sgame/files/ano_tmp/custom_cache
-chown root:root /data/data/com.tencent.tmgp.sgame/files/ano_tmp/
-chown root:root /data/data/com.tencent.tmgp.sgame/files/ano_tmp/*
 echo 提取王者uid
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.sgame | awk '{print $2}'`
 sleep 0.5
