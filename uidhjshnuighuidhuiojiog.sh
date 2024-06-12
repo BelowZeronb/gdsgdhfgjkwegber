@@ -74,6 +74,7 @@ echo 2️⃣/3️⃣
 sleep 0.5
 iptables -I OUTPUT -m owner --uid-owner=$uid -d thirdwx.qlogo.cn -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -d thirdqq.qlogo.cn -j ACCEPT
+echo 3️⃣/3️⃣
 echo 加载验证效果地址:www.baidu.com
 #验证
 iptables -I OUTPUT -d www.baidu.com -j DROP
