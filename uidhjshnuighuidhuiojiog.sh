@@ -1,5 +1,5 @@
 echo -e "\033[45;37m 欢迎使用极地ICE防卡框 \033[0m"
-echo 云更日期:2024年6月12日晚九点左右
+echo 云更日期:2024年6月12日晚10点左右
 echo 清理iptables规则
 iptables -F
 iptables -t nat -F 
