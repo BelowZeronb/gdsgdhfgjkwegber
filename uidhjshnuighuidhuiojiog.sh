@@ -30,10 +30,6 @@ sleep 0.5
 iptables -I OUTPUT -m owner --uid-owner=$uid -d priv.igame.qq.com -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -d lbs.map.qq.com -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -d apis.map.qq.com -j ACCEPT
-#修复第三方环境异常
-echo 16384 > /proc/sys/fs/inotify/max_queued_events
-echo 128 > /proc/sys/fs/inotify/max_user_instances
-echo 8192 > /proc/sys/fs/inotify/max_user_watches
 #
 iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 10012 -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10012 -j DROP
